@@ -29,4 +29,19 @@ extension PlatformColor {
         return min(max(y, 0), 1)
     }
 
+    /// Calculates the contrast ratio between two colors according to
+    /// the Web Content Accessibility Guidelines (WCAG) 2.2.
+    ///
+    /// # Reference
+    ///
+    /// * [WCAG 2.2](https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio)
+    ///
+    /// - Parameter otherColor: The other color to compare with.
+    /// - Returns: The contrast ratio.
+    public func contrastRatio(to otherColor: PlatformColor) -> CGFloat {
+        let luminance1 = self.relativeLuminance
+        let luminance2 = otherColor.relativeLuminance
+        return (max(luminance1, luminance2) + 0.05) / (min(luminance1, luminance2) + 0.05)
+    }
+
 }

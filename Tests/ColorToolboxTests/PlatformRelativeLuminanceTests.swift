@@ -29,4 +29,21 @@ final class PlatformRelativeLuminanceTests: XCTestCase {
         }
     }
 
+    func test_contrastRatio() throws {
+        // High contrast
+        XCTAssertEqual(PlatformColor.white.contrastRatio(to: .black), 21)
+        XCTAssertEqual(PlatformColor.black.contrastRatio(to: .white), 21)
+
+        // Identical colors
+        XCTAssertEqual(PlatformColor.white.contrastRatio(to: .white), 1)
+        XCTAssertEqual(PlatformColor.black.contrastRatio(to: .black), 1)
+
+        // Black to 50% gray
+        XCTAssertEqual(
+            PlatformColor.black.contrastRatio(to: PlatformColor(white: 0.5, alpha: 1)),
+            5.28,
+            accuracy: 0.01
+        )
+    }
+
 }
