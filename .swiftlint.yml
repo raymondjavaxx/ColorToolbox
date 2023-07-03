@@ -46,6 +46,8 @@ identifier_name:
     - b
     - a
     - y
+    - h
+    - s
 
 excluded:
   - ".build"
