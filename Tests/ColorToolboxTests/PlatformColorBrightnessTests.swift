@@ -1,0 +1,37 @@
+//
+//  PlatformColorBrightnessTests.swift
+//  
+//
+//  Created by Ramon Torres on 7/2/23.
+//
+
+import XCTest
+import ColorToolbox
+
+final class PlatformColorBrightnessTests: XCTestCase {
+
+    func test_lightening() {
+        let sut = PlatformColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        let lightenedColor = sut.lightening(by: 0.5)
+        XCTAssertEqual(lightenedColor.cgColor.components, [0.75, 0.75, 0.75, 1])
+    }
+
+    func test_lightening_shouldNotExceedMaxBrightness() {
+        let sut = PlatformColor(red: 1, green: 1, blue: 1, alpha: 1)
+        let lightenedColor = sut.lightening(by: 0.5)
+        XCTAssertEqual(lightenedColor.cgColor.components, [1, 1, 1, 1])
+    }
+
+    func test_darkening() {
+        let sut = PlatformColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        let darkenedColor = sut.darkening(by: 0.5)
+        XCTAssertEqual(darkenedColor.cgColor.components, [0.25, 0.25, 0.25, 1])
+    }
+
+    func test_darkening_shouldNotExceedMinBrightness() {
+        let sut = PlatformColor(red: 0, green: 0, blue: 0, alpha: 1)
+        let darkenedColor = sut.darkening(by: 0.5)
+        XCTAssertEqual(darkenedColor.cgColor.components, [0, 0, 0, 1])
+    }
+
+}
