@@ -19,7 +19,7 @@ let hexString = color.toHex()
 ### Calculating the relative luminance
 
 ```swift
-let color = UIColor.red // Or NSColor.red on macOS
+let color = UIColor.red
 print(color.relativeLuminance) // 0.2126
 ```
 
