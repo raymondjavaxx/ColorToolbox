@@ -1,6 +1,23 @@
 # ColorToolbox
 
-Swift color utilities.
+Swift color utilities for UIKit, AppKit and SwiftUI.
+
+## Installation
+## Swift Package Manager
+
+Add the following dependency to your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/raymondjavaxx/ColorToolbox.git", from: "1.0.0")
+```
+
+## CocoaPods
+
+Add the following line to your `Podfile`:
+
+```ruby
+pod 'ColorToolbox', '~> 1.0'
+```
 
 ## Usage
 
