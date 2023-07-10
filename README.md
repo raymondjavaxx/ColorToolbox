@@ -21,7 +21,11 @@ pod 'ColorToolbox', '~> 1.0'
 
 ## Usage
 
+ColorToolbox is implemented as a set of extensions on `UIColor`, `NSColor` and `Color` (SwiftUI). All utility methods and properties are available on all supported platforms.
+
 ### Converting from and to hex string
+
+To create a color from a hex string, use the `init(hex:)` initializer:
 
 ```swift
 import ColorToolbox
@@ -34,15 +38,18 @@ let color = NSColor(hex: "#ff0000")
 
 // SwiftUI
 let color = Color(hex: "#ff0000")
+```
 
-// To hex string
+To convert a color to hex, use the `toHex()` method:
+
+```swift
 let hexString = color.toHex()
 ```
 
 ### Calculating the relative luminance
 
 ```swift
-let color = ...red
+let color: UIColor = .red
 print(color.relativeLuminance) // 0.2126
 ```
 
@@ -54,3 +61,14 @@ let color2 = ...
 
 let contrastRatio = color1.contrastRatio(to: color2)
 ```
+
+### Lightening and darkening colors
+
+```swift
+let lighterColor = color.lightening(by: 0.2)
+let darkerColor = color.darkening(by: 0.2)
+```
+
+## License
+
+ColorToolbox is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
