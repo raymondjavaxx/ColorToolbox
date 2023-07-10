@@ -30,7 +30,7 @@ extension PlatformColor {
 
         #if canImport(UIKit)
         return PlatformColor { _ in calculate() }
-        #elseif canImport(AppKit)
+        #else
         return PlatformColor(name: nil) { _ in calculate() }
         #endif
     }
@@ -56,7 +56,7 @@ extension PlatformColor {
 
         #if canImport(UIKit)
         return PlatformColor { _ in calculate() }
-        #elseif canImport(AppKit)
+        #else
         return PlatformColor(name: nil) { _ in calculate() }
         #endif
     }

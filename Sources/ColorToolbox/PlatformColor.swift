@@ -7,14 +7,14 @@
 
 #if canImport(UIKit)
 import UIKit
-#elseif canImport(AppKit)
+#else
 import AppKit
 #endif
 
 #if canImport(UIKit)
 /// Alias of UIColor.
 public typealias PlatformColor = UIColor
-#elseif canImport(AppKit)
+#else
 /// Alias of NSColor.
 public typealias PlatformColor = NSColor
 #endif

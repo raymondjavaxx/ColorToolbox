@@ -33,7 +33,7 @@ extension PlatformColor {
             alpha: &components.a
         )
         assert(result, "Failed to get RGBA components from UIColor")
-        #elseif canImport(AppKit)
+        #else
         if let rgbColor = self.usingColorSpace(.sRGB) {
             rgbColor.getRed(
                 &components.r,
@@ -60,7 +60,7 @@ extension PlatformColor {
             alpha: &components.a
         )
         assert(result, "Failed to get HSB components from UIColor")
-        #elseif canImport(AppKit)
+        #else
         if let rgbColor = self.usingColorSpace(.sRGB) {
             rgbColor.getHue(
                 &components.h,
