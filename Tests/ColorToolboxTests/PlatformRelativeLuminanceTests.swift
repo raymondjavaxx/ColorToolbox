@@ -1,6 +1,6 @@
 //
 //  PlatformRelativeLuminanceTests.swift
-//  ColorToolboxTests  
+//  ColorToolboxTests
 //
 //  Copyright (c) 2023 Ramon Torres
 //
