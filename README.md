@@ -21,7 +21,7 @@ pod 'ColorToolbox', '~> 1.0'
 
 ## Usage
 
-ColorToolbox is implemented as a set of extensions on `UIColor`, `NSColor` and `Color` (SwiftUI). The following examples use `UIColor`, but the same utilities are available on all platforms.
+ColorToolbox is implemented as a set of extensions on `UIColor`, `NSColor` and `Color` (SwiftUI). All utility methods and properties are available on all supported platforms.
 
 ### Converting from and to hex string
 
@@ -30,7 +30,14 @@ To create a color from a hex string, use the `init(hex:)` initializer:
 ```swift
 import ColorToolbox
 
+// UIKit
 let color = UIColor(hex: "#ff0000")
+
+// AppKit
+let color = NSColor(hex: "#ff0000")
+
+// SwiftUI
+let color = Color(hex: "#ff0000")
 ```
 
 To convert a color to a hex string, use the `toHex()` method:
