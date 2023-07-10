@@ -11,6 +11,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "14.0"
   spec.tvos.deployment_target = "14.0"
   spec.osx.deployment_target = "11.0"
+  spec.watchos.deployment_target = "7.0"
 
   spec.source       = { :git => "https://github.com/raymondjavaxx/ColorToolbox.git", :tag => "#{spec.version}" }
   spec.source_files = "Sources/ColorToolbox/**/*.swift"
