@@ -2,7 +2,10 @@
 //  Color+ColorToolbox.swift
 //  ColorToolbox
 //
-//  Created by Ramon Torres on 7/10/23.
+//  Copyright (c) 2023 Ramon Torres
+//
+//  This file is part of ColorToolbox which is released under the MIT license.
+//  See the LICENSE file in the root directory of this source tree for full details.
 //
 
 #if canImport(SwiftUI)

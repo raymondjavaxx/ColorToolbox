@@ -1,8 +1,11 @@
 //
 //  PlatformColorBrightnessTests.swift
-//  
+//  ColorToolboxTests
 //
-//  Created by Ramon Torres on 7/2/23.
+//  Copyright (c) 2023 Ramon Torres
+//
+//  This file is part of ColorToolbox which is released under the MIT license.
+//  See the LICENSE file in the root directory of this source tree for full details.
 //
 
 import XCTest

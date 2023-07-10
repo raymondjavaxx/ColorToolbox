@@ -52,6 +52,18 @@ identifier_name:
 excluded:
   - ".build"
 
+file_header:
+  required_pattern: |
+      \/\/
+      \/\/  SWIFTLINT_CURRENT_FILENAME
+      \/\/  (ColorToolbox|ColorToolboxTests)
+      \/\/
+      \/\/  Copyright \(c\) \d{4}(-\d{4})? Ramon Torres
+      \/\/
+      \/\/  This file is part of ColorToolbox which is released under the MIT license\.
+      \/\/  See the LICENSE file in the root directory of this source tree for full details\.
+      \/\/
+
 file_name:
   suffix_pattern: "[+-]{1}.*"
 
