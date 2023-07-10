@@ -54,3 +54,8 @@ let color2 = ...
 
 let contrastRatio = color1.contrastRatio(to: color2)
 ```
+
+
+## License
+
+ColorToolbox is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
