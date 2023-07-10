@@ -28,7 +28,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: xcodebuild clean build -scheme ColorToolbox -destination '${{ matrix.destination }}'
+        run: |-
+          set -o pipefail && NSUnbufferedIO=YES xcodebuild clean build \
+            -scheme ColorToolbox \
+            -destination '${{ matrix.destination }}' \
+            | xcpretty
       - name: Run tests
         run: |-
           set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
