@@ -19,24 +19,31 @@ jobs:
         run: swift test -v
   build-other-platforms:
     runs-on: macos-latest
+    name: Build ${{ matrix.destination.label }}
     strategy:
       matrix:
         destination:
-          - "platform=iOS Simulator,name=iPhone 14,OS=latest"
-          - "platform=tvOS Simulator,name=Apple TV,OS=latest"
-          - "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
+          -
+            label: iOS
+            value: "platform=iOS Simulator,name=iPhone 14,OS=latest"
+          -
+            label: tvOS
+            value: "platform=tvOS Simulator,name=Apple TV,OS=latest"
+          - 
+            label: watchOS
+            value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
       - uses: actions/checkout@v3
       - name: Build
         run: |-
           set -o pipefail && NSUnbufferedIO=YES xcodebuild clean build \
             -scheme ColorToolbox \
-            -destination '${{ matrix.destination }}' \
+            -destination '${{ matrix.destination.value }}' \
             | xcpretty
       - name: Run tests
         run: |-
           set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
             -scheme ColorToolbox \
-            -destination '${{ matrix.destination }}' \
+            -destination '${{ matrix.destination.value }}' \
             -sdk iphonesimulator \
             | xcpretty
