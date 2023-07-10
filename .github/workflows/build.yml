@@ -17,14 +17,22 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run tests
         run: swift test -v
-  build-ios:
+  build-other-platforms:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        destination:
+          - "platform=iOS Simulator,name=iPhone 14,OS=latest"
+          - "platform=tvOS Simulator,name=Apple TV 4K (at 1080p),OS=latest"
+          - "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
       - uses: actions/checkout@v3
+      - name: Build
+        run: xcodebuild clean build -scheme ColorToolbox
       - name: Run tests
         run: |-
           set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
             -scheme ColorToolbox \
-            -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
+            -destination '${{ matrix.destination }}' \
             -sdk iphonesimulator \
             | xcpretty
