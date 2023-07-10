@@ -79,4 +79,20 @@ extension PlatformColor {
         return components
     }
 
+    static func dynamicColor(_ block: @escaping () -> PlatformColor) -> PlatformColor {
+        #if canImport(UIKit)
+        #if os(watchOS)
+        // watchOS doesn't support dynamic color providers. We simply invoke
+        // the block and return the transformed color.
+        return block()
+        #else
+        // iOS, iPadOS, Mac Catalyst, and tvOS
+        return PlatformColor { _ in block() }
+        #endif
+        #else
+        // macOS
+        return PlatformColor(name: nil) { _ in block() }
+        #endif
+    }
+
 }
