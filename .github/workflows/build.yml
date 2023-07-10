@@ -20,18 +20,18 @@ jobs:
         run: swift test -v
   build-other-platforms:
     runs-on: macos-latest
-    name: Build ${{ matrix.destination.label }}
+    name: Build ${{ matrix.destination.name }}
     strategy:
       matrix:
         destination:
           -
-            label: iOS
+            name: iOS
             value: "platform=iOS Simulator,name=iPhone 14,OS=latest"
           -
-            label: tvOS
+            name: tvOS
             value: "platform=tvOS Simulator,name=Apple TV,OS=latest"
           - 
-            label: watchOS
+            name: watchOS
             value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
       - uses: actions/checkout@v3
