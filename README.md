@@ -40,7 +40,7 @@ let color = NSColor(hex: "#ff0000")
 let color = Color(hex: "#ff0000")
 ```
 
-To convert a color to a hex string, use the `toHex()` method:
+To convert a color to hex, use the `toHex()` method:
 
 ```swift
 let hexString = color.toHex()
