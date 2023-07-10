@@ -12,6 +12,7 @@ on:
       - '**.swift'
 jobs:
   build-macos:
+    name: Build macOS
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
