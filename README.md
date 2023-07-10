@@ -9,8 +9,14 @@ Swift color utilities.
 ```swift
 import ColorToolbox
 
-// From hex string
-let color = UIColor(hex: "#ff0000") // Or NSColor(hex: "#ff0000") on macOS
+// UIKit
+let color = UIColor(hex: "#ff0000")
+
+// AppKit
+let color = NSColor(hex: "#ff0000")
+
+// SwiftUI
+let color = Color(hex: "#ff0000")
 
 // To hex string
 let hexString = color.toHex()
@@ -19,7 +25,7 @@ let hexString = color.toHex()
 ### Calculating the relative luminance
 
 ```swift
-let color = UIColor.red
+let color = ...red
 print(color.relativeLuminance) // 0.2126
 ```
 
