@@ -1,0 +1,11 @@
+name: Build
+on:
+  pull_request:
+    paths-ignore:
+      - '.github/workflows/build.yml'
+      - "**/*.swift" 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'
