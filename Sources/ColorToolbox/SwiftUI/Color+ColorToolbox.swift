@@ -38,8 +38,7 @@ extension Color {
     ///
     /// - Returns: Hex string.
     public func toHex() -> String {
-        return PlatformColor(self)
-            .toHex()
+        return PlatformColor(self).toHex()
     }
 
     /// Calculates the contrast ratio between two colors according to
@@ -52,8 +51,7 @@ extension Color {
     /// - Parameter otherColor: The other color to compare with.
     /// - Returns: The contrast ratio.
     public func contrastRatio(to otherColor: Color) -> CGFloat {
-        return PlatformColor(self)
-            .contrastRatio(to: PlatformColor(otherColor))
+        return PlatformColor(self).contrastRatio(to: PlatformColor(otherColor))
     }
 
     /// Returns a color that is lighter than the receiver by the given ratio.
