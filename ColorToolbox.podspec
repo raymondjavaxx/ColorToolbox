@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ColorToolbox"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Swift color utilities for UIKit, AppKit and SwiftUI."
 
   spec.homepage     = "https://github.com/raymondjavaxx/ColorToolbox"
