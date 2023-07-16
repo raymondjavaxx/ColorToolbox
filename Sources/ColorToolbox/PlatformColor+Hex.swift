@@ -81,18 +81,18 @@ extension PlatformColor {
             // RGB
             return String(
                 format: "#%02lX%02lX%02lX",
-                Int(components.r * 255),
-                Int(components.g * 255),
-                Int(components.b * 255)
+                Int(round(components.r * 255)),
+                Int(round(components.g * 255)),
+                Int(round(components.b * 255))
             )
         } else {
             // RGBA
             return String(
                 format: "#%02lX%02lX%02lX%02lX",
-                Int(components.r * 255),
-                Int(components.g * 255),
-                Int(components.b * 255),
-                Int(components.a * 255)
+                Int(round(components.r * 255)),
+                Int(round(components.g * 255)),
+                Int(round(components.b * 255)),
+                Int(round(components.a * 255))
             )
         }
     }
