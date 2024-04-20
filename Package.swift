@@ -1,14 +1,16 @@
-// swift-tools-version:5.6
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
     name: "ColorToolbox",
     platforms: [
-        .iOS(.v14),
-        .tvOS(.v14),
-        .macOS(.v11),
-        .watchOS(.v7)
+        .iOS(.v13),
+        .tvOS(.v13),
+        .macOS(.v10_15),
+        .watchOS(.v6),
+        .visionOS(.v1),
+        .macCatalyst(.v13),
     ],
     products: [
         .library(
