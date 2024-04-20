@@ -39,6 +39,7 @@ jobs:
           xcode-version: latest-stable
       - name: Inspect versions
         run: |
+          system_profiler SPSoftwareDataType
           swift --version
           xcodebuild -version
       - uses: actions/checkout@v3
