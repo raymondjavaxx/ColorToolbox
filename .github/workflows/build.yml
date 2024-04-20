@@ -2,14 +2,14 @@ name: Build
 on:
   push:
     branches:
-      - 'main'
+      - "*"
     paths:
-      - '.github/workflows/build.yml'
-      - '**.swift'
+      - ".github/workflows/build.yml"
+      - "**.swift"
   pull_request:
     paths:
-      - '.github/workflows/build.yml'
-      - '**.swift'
+      - ".github/workflows/build.yml"
+      - "**.swift"
 concurrency:
   group: build-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -27,16 +27,17 @@ jobs:
     strategy:
       matrix:
         destination:
-          -
-            name: iOS
+          - name: iOS
             value: "platform=iOS Simulator,name=iPhone 14,OS=latest"
-          -
-            name: tvOS
+          - name: tvOS
             value: "platform=tvOS Simulator,name=Apple TV,OS=latest"
-          - 
-            name: watchOS
+          - name: watchOS
             value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
+      - name: Inspect versions
+        run: |
+          swift --version
+          xcodebuild -version
       - uses: actions/checkout@v3
       - name: Build
         run: |-
