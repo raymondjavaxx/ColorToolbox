@@ -34,6 +34,8 @@ jobs:
           - name: watchOS
             value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
+      - name: Switch Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.0.1.app
       - name: Inspect versions
         run: |
           swift --version
